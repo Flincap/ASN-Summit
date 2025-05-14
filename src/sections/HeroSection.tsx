@@ -106,7 +106,7 @@ const HeroSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.5 }}
           >
-            <Button variant="primary" href="#tickets">
+            <Button variant="primary" href="https://tix.africa/afristablecoin">
               Get Tickets
             </Button>
             <Button
