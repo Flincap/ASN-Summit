@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, X, Coins } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Menu, X, Coins } from "lucide-react";
+import Logo from "./Logo";
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,31 +17,30 @@ const Navbar: React.FC = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header 
+    <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white shadow-md py-3' : 'bg-transparent py-5'
+        scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
       }`}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex justify-between items-center">
-          <a href="#" className="flex items-center space-x-2">
-            <Coins className="w-8 h-8 text-primary-600" />
-            <span className="font-heading font-bold text-xl text-primary-800">ASC2025</span>
-          </a>
+          <div className="z-50">
+            <Logo className="h-12" />
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="#tickets"
+              href="https://tix.africa/afristablecoin"
               className="px-5 py-2.5 rounded-md bg-primary-600 text-white font-medium text-sm hover:bg-primary-700 transition-all transform hover:scale-105 duration-300"
             >
               Get Tickets
@@ -66,9 +66,9 @@ const Navbar: React.FC = () => {
 
       {/* Mobile Navigation Menu */}
       <motion.div
-        className={`md:hidden ${isOpen ? 'block' : 'hidden'}`}
+        className={`md:hidden ${isOpen ? "block" : "hidden"}`}
         initial={{ opacity: 0, height: 0 }}
-        animate={{ opacity: isOpen ? 1 : 0, height: isOpen ? 'auto' : 0 }}
+        animate={{ opacity: isOpen ? 1 : 0, height: isOpen ? "auto" : 0 }}
         transition={{ duration: 0.3 }}
       >
         <div className="container mx-auto px-4 py-4 bg-white shadow-lg rounded-b-lg">
