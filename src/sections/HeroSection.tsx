@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Countdown from "react-countdown";
-import { MapPin } from "lucide-react";
+import { MapPin, Clock, Calendar } from "lucide-react";
 import Button from "../components/Button";
 
 const HeroSection: React.FC = () => {
@@ -59,7 +59,7 @@ const HeroSection: React.FC = () => {
               Africa Stablecoin Conference 2025
             </h1>
             <h2 className="text-xl md:text-2xl text-white mb-8">
-              Driving Financial Innovation Across Africa
+              Borderless. Payments. Stablecoins.
             </h2>
           </motion.div>
 
@@ -79,7 +79,25 @@ const HeroSection: React.FC = () => {
             transition={{ delay: 0.5, duration: 0.7 }}
           >
             <MapPin className="mr-2 h-5 w-5 text-secondary-400" />
-            <span>Four Points by Sheraton, VI, Lagos</span>
+            <span>Oriental Hotel, VI, Lagos</span>
+          </motion.div>
+
+          <motion.div
+            className="flex items-center text-white mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.7 }}
+          >
+            <div>
+              <div className="flex items-center mb-2 md:mb-0 md:mr-6">
+                <Calendar className="mr-2 h-5 w-5 text-secondary-400" />
+                <span>November 7, 2025</span>
+              </div>
+              <div className="flex items-center">
+                <Clock className="mr-2 h-5 w-5 text-secondary-400" />
+                <span>8:00am WAT</span>
+              </div>
+            </div>
           </motion.div>
 
           <motion.div
