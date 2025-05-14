@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div>
             <div className="z-50">
-              <Logo className="h-12" />
+              <Logo className="h-10" />
             </div>
             <p className="text-gray-300 mb-4">
               Africa's premier platform for deep insights, live showcases, and
@@ -60,9 +60,7 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li className="text-gray-300">Date: November 7, 2025</li>
               <li className="text-gray-300">Time: 8:00am WAT</li>
-              <li className="text-gray-300">
-                Venue: Four Points by Sheraton Hotel
-              </li>
+              <li className="text-gray-300">Venue: Oriental Hotel</li>
               <li className="text-gray-300">Victoria Island, Lagos, Nigeria</li>
             </ul>
           </div>

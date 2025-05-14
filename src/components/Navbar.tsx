@@ -74,7 +74,7 @@ const Navbar: React.FC = () => {
         <div className="container mx-auto px-4 py-4 bg-white shadow-lg rounded-b-lg">
           <nav className="flex flex-col space-y-4">
             <a
-              href="#tickets"
+              href="https://tix.africa/afristablecoin"
               className="px-5 py-2.5 rounded-md bg-primary-600 text-white font-medium text-center hover:bg-primary-700 transition-all"
               onClick={toggleMenu}
             >
