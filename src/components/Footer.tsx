@@ -1,6 +1,6 @@
 import React from "react";
+import Logo from "./Logo";
 import {
-  Coins,
   Twitter,
   Linkedin,
   Facebook,
@@ -17,11 +17,8 @@ const Footer: React.FC = () => {
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <Coins className="w-8 h-8 text-secondary-400" />
-              <span className="font-heading font-bold text-xl text-white">
-                ASC2025
-              </span>
+            <div className="z-50">
+              <Logo className="h-12" />
             </div>
             <p className="text-gray-300 mb-4">
               Africa's premier platform for deep insights, live showcases, and
