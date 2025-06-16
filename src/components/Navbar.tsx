@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="https://tix.africa/afristablecoin"
+              href="https://tix.africa/ngstablecoin"
               className="px-5 py-2.5 rounded-md bg-primary-600 text-white font-medium text-sm hover:bg-primary-700 transition-all transform hover:scale-105 duration-300"
             >
               Get Tickets
