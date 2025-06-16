@@ -44,10 +44,10 @@ const AboutSection: React.FC = () => {
                 rapidly evolving — and stablecoins are leading the charge.
               </p>
               <p className="text-lg leading-relaxed mb-6">
-                Now in its most anticipated edition yet, the Africa Stablecoin
-                Conference is the continent's premier platform for deep
-                insights, live showcases, and high-value networking across the
-                digital currency and stablecoin space.
+                Now in its most anticipated edition yet, the Nigeria Stablecoin
+                Summit is the continent's premier platform for deep insights,
+                live showcases, and high-value networking across the digital
+                currency and stablecoin space.
               </p>
               <p className="text-lg leading-relaxed">
                 Join experts from payments, blockchain, policy, banking,
@@ -81,7 +81,7 @@ const AboutSection: React.FC = () => {
 
                 <div className="bg-white p-5 rounded-lg shadow-even">
                   <p className="italic text-primary-600 font-medium">
-                    "The Africa Stablecoin Conference brings together the entire
+                    "The Nigeria Stablecoin Summit brings together the entire
                     ecosystem — from builders to regulators — creating a unique
                     platform for collaboration that's driving innovation
                     forward."
