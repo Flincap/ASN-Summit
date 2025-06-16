@@ -87,10 +87,10 @@ const HeroSection: React.FC = () => {
             transition={{ duration: 0.7 }}
           >
             <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-4">
-              Africa Stablecoin Conference 2025
+              Nigeria Stablecoin Summit
             </h1>
             <h2 className="text-xl md:text-2xl text-white mb-8">
-              Borderless. Payments. Stablecoins.
+              Enhancing Adoption of a Borderless Digital Economy.
             </h2>
           </motion.div>
 
