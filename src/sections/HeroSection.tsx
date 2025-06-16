@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Countdown from "react-countdown";
 import { MapPin, Clock, Calendar } from "lucide-react";
 import Button from "../components/Button";
 
 const HeroSection: React.FC = () => {
-  // Event date: November 7, 2025
-  const eventDate = new Date("2025-11-07T08:00:00").getTime();
+  const eventDate = new Date("2025-07-24T08:00:00").getTime();
+
+  const backgroundImages = ["/hero-bg.jpg", "/hero-bg-2.JPG"];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((currentIndex) => {
+        const nextIndex = currentIndex + 1;
+        if (nextIndex >= backgroundImages.length) {
+          return 0;
+        } else {
+          return nextIndex;
+        }
+      });
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [backgroundImages.length]);
 
   // Countdown renderer
   const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
@@ -45,7 +62,21 @@ const HeroSection: React.FC = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center bg-[url('/hero-bg.jpg')] bg-cover bg-center py-20">
+    <section className="relative min-h-screen flex items-center overflow-hidden py-20">
+      <div className="absolute inset-0">
+        {backgroundImages.map((image, index) => (
+          <motion.div
+            key={index}
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${image})` }}
+            initial={{ opacity: 0 }}
+            animate={{
+              opacity: index === currentImageIndex ? 1 : 0,
+            }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+          />
+        ))}
+      </div>
       <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]"></div>
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
@@ -91,7 +122,7 @@ const HeroSection: React.FC = () => {
             <div>
               <div className="flex items-center mb-2 md:mb-0 md:mr-6">
                 <Calendar className="mr-2 h-5 w-5 text-secondary-400" />
-                <span>November 7, 2025</span>
+                <span>July 24, 2025</span>
               </div>
               <div className="flex items-center">
                 <Clock className="mr-2 h-5 w-5 text-secondary-400" />
@@ -106,7 +137,7 @@ const HeroSection: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.7, duration: 0.5 }}
           >
-            <Button variant="primary" href="https://tix.africa/afristablecoin">
+            <Button variant="primary" href="https://tix.africa/ngstablecoin">
               Get Tickets
             </Button>
             <Button

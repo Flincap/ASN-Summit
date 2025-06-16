@@ -58,10 +58,11 @@ const Footer: React.FC = () => {
               Event Info
             </h3>
             <ul className="space-y-2">
-              <li className="text-gray-300">Date: November 7, 2025</li>
+              <li className="text-gray-300">Date: July 24, 2025</li>
               <li className="text-gray-300">Time: 8:00am WAT</li>
-              <li className="text-gray-300">Venue: Oriental Hotel</li>
-              <li className="text-gray-300">Victoria Island, Lagos, Nigeria</li>
+              <li className="text-gray-300">
+                Venue: Oriental Hotel, Victoria Island, Lagos, Nigeria
+              </li>
             </ul>
           </div>
 
