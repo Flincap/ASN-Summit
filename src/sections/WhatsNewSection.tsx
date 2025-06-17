@@ -1,9 +1,9 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { Store, Users, LayoutList, Presentation } from 'lucide-react';
-import SectionTitle from '../components/SectionTitle';
-import Card from '../components/Card';
+import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import { Store, Users, LayoutList, Presentation } from "lucide-react";
+import SectionTitle from "../components/SectionTitle";
+import Card from "../components/Card";
 
 const WhatsNewSection: React.FC = () => {
   const [ref, inView] = useInView({
@@ -15,38 +15,35 @@ const WhatsNewSection: React.FC = () => {
     {
       icon: <Store size={36} />,
       title: "Stablecoin Expo",
-      content: "A dynamic showcase of wallets, protocols, infrastructure providers, and ecosystem projects shaping stablecoin utility across Africa.",
-      delay: 0
-    },
-    {
-      icon: <Users size={36} />,
-      title: "Pre-Event Networking Night",
-      content: "An intimate evening for delegates to unwind, connect, and build strategic relationships — before the conference kicks off.",
-      delay: 0.1
+      content:
+        "A dynamic showcase of wallets, protocols, infrastructure providers, and ecosystem projects shaping stablecoin utility across Africa.",
+      delay: 0,
     },
     {
       icon: <LayoutList size={36} />,
       title: "New Content Tracks",
-      content: "CBDCs, asset-backed stablecoins, interoperability, real-world stablecoin use cases, and on-chain financial infrastructure.",
-      delay: 0.2
+      content:
+        "CBDCs, asset-backed stablecoins, interoperability, real-world stablecoin use cases, and on-chain financial infrastructure.",
+      delay: 0.1,
     },
     {
       icon: <Presentation size={36} />,
       title: "Pitch Live",
-      content: "Africa's brightest early-stage startups take the spotlight to present transformative ideas and compete for investor attention.",
-      delay: 0.3
-    }
+      content:
+        "Africa's brightest early-stage startups take the spotlight to present transformative ideas and compete for investor attention.",
+      delay: 0.2,
+    },
   ];
 
   const headerVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
         duration: 0.6,
-        ease: "easeOut"
-      } 
+        ease: "easeOut",
+      },
     },
   };
 
@@ -56,7 +53,7 @@ const WhatsNewSection: React.FC = () => {
         <motion.div
           ref={ref}
           initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
+          animate={inView ? "visible" : "hidden"}
           variants={headerVariants}
         >
           <SectionTitle
@@ -65,8 +62,8 @@ const WhatsNewSection: React.FC = () => {
             center
           />
         </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <Card
               key={index}

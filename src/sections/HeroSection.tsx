@@ -104,7 +104,7 @@ const HeroSection: React.FC = () => {
           </motion.div>
 
           <motion.div
-            className="flex items-center text-white mb-8"
+            className="flex items-center text-white mb-4"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.7 }}
@@ -119,7 +119,7 @@ const HeroSection: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.7 }}
           >
-            <div>
+            <div className="flex">
               <div className="flex items-center mb-2 md:mb-0 md:mr-6">
                 <Calendar className="mr-2 h-5 w-5 text-secondary-400" />
                 <span>July 24, 2025</span>

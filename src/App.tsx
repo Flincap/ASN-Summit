@@ -6,6 +6,7 @@ import StatsSection from "./sections/StatsSection";
 import WhatsNewSection from "./sections/WhatsNewSection";
 import ThemesSection from "./sections/ThemesSection";
 import PitchSection from "./sections/PitchSection";
+import EssayContestSection from "./sections/EssayContestSection";
 import PartnersSection from "./sections/PartnersSection";
 import ExhibitionSection from "./sections/ExhibitionSection";
 import SpeakerSection from "./sections/SpeakerSection";
@@ -24,6 +25,7 @@ function App() {
         <WhatsNewSection />
         <ThemesSection />
         <PitchSection />
+        <EssayContestSection />
         <PartnersSection />
         <ExhibitionSection />
         <SpeakerSection />
