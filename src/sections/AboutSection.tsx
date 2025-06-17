@@ -52,7 +52,7 @@ const AboutSection: React.FC = () => {
               <p className="text-lg leading-relaxed">
                 Join experts from payments, blockchain, policy, banking,
                 fintech, and regtech as they discuss what's next — and how we
-                build it. This July, we convene the continent's most
+                build it. This July, we convene the country's most
                 forward-thinking builders, regulators, innovators, and investors
                 to explore how stablecoins are reshaping finance, empowering
                 people, and accelerating economic transformation across Africa.
