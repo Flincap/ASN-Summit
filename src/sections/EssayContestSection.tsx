@@ -65,7 +65,7 @@ const EssayContestSection: React.FC = () => {
                   Original essays only - AI-generated content will be
                   disqualified
                 </li>
-                <li>Application closes: July 10, 2024</li>
+                <li>Application closes: July 10, 2025</li>
               </ul>
             </div>
             <div className="text-center">
