@@ -58,11 +58,11 @@ const ContactSection: React.FC = () => {
           <div className="space-y-6">
             <div className="flex flex-col md:flex-row items-center justify-center md:space-x-8">
               <a
-                href="mailto:nath@africastablecoin.org"
+                href="mailto:nath@afristablecoin.org"
                 className="flex items-center text-primary-600 hover:text-primary-700 transition-colors"
               >
                 <Mail size={20} className="mr-2" />
-                <span>nath@africastablecoin.org</span>
+                <span>nath@afristablecoin.org</span>
               </a>
               <a
                 href="tel:+2349039830751"

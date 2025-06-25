@@ -103,7 +103,7 @@ const ExhibitionSection: React.FC = () => {
         >
           <Button
             variant="primary"
-            href="mailto:nath@africastablecoin.org?subject=Exhibition%20Deck%20Request"
+            href="mailto:nath@afristablecoin.org?subject=Exhibition%20Deck%20Request"
           >
             Request Exhibition Deck
           </Button>

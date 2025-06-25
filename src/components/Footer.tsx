@@ -77,10 +77,10 @@ const Footer: React.FC = () => {
                   className="flex-shrink-0 mt-1 text-secondary-400"
                 />
                 <a
-                  href="mailto:nath@africastablecoin.org"
+                  href="mailto:nath@afristablecoin.org"
                   className="text-gray-300 hover:text-secondary-400 transition-colors"
                 >
-                  nath@africastablecoin.org
+                  nath@afristablecoin.org
                 </a>
               </li>
               <li className="flex items-start space-x-3">
