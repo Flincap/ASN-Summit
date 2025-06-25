@@ -46,7 +46,7 @@ const Navbar: React.FC = () => {
               Get Tickets
             </a>
             <a
-              href="mailto:nath@africastablecoin.org?subject=Sponsorship%20Deck%20Request"
+              href="mailto:nath@afristablecoin.org?subject=Sponsorship%20Deck%20Request"
               className="px-5 py-2.5 rounded-md border-2 border-primary-600 text-primary-600 font-medium text-sm hover:bg-primary-50 transition-all transform hover:scale-105 duration-300"
             >
               Request Sponsorship Deck
@@ -81,7 +81,7 @@ const Navbar: React.FC = () => {
               Get Tickets
             </a>
             <a
-              href="mailto:nath@africastablecoin.org?subject=Sponsorship%20Deck%20Request"
+              href="mailto:nath@afristablecoin.org?subject=Sponsorship%20Deck%20Request"
               className="px-5 py-2.5 rounded-md border-2 border-primary-600 text-primary-600 font-medium text-center hover:bg-primary-50 transition-all"
               onClick={toggleMenu}
             >

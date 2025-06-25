@@ -143,7 +143,7 @@ const HeroSection: React.FC = () => {
             <Button
               variant="outline"
               className="border-white text-white hover:bg-white hover:bg-opacity-10"
-              href="mailto:nath@africastablecoin.org?subject=Sponsorship%20Deck%20Request"
+              href="mailto:nath@afristablecoin.org?subject=Sponsorship%20Deck%20Request"
             >
               Request Sponsorship Deck
             </Button>
