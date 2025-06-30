@@ -66,15 +66,15 @@ const StatsSection: React.FC = () => {
     },
     {
       icon: <Store size={24} />,
-      value: "20+",
+      value: "10+",
       label: "Exhibitors",
       delay: 0.2,
     },
-    { icon: <Mic2 size={24} />, value: "15+", label: "Speakers", delay: 0.3 },
+    { icon: <Mic2 size={24} />, value: "30+", label: "Speakers", delay: 0.3 },
     {
       icon: <MessageSquare size={24} />,
-      value: "5+",
-      label: "Expert Sessions",
+      value: "2",
+      label: "Stages",
       delay: 0.4,
     },
     {

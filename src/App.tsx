@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from "./sections/HeroSection";
+import TicketSection from "./sections/TicketSection";
 import AboutSection from "./sections/AboutSection";
 import StatsSection from "./sections/StatsSection";
 import WhatsNewSection from "./sections/WhatsNewSection";
@@ -22,6 +23,7 @@ function App() {
       <Navbar />
       <main>
         <HeroSection />
+        <TicketSection />
         <AboutSection />
         <StatsSection />
         <WhatsNewSection />
