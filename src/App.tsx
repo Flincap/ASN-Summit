@@ -7,12 +7,14 @@ import WhatsNewSection from "./sections/WhatsNewSection";
 import ThemesSection from "./sections/ThemesSection";
 import PitchSection from "./sections/PitchSection";
 import EssayContestSection from "./sections/EssayContestSection";
+import EventPartnersSection from "./sections/EventPartnersSection";
 import PartnersSection from "./sections/PartnersSection";
 import ExhibitionSection from "./sections/ExhibitionSection";
 import SpeakerSection from "./sections/SpeakerSection";
 import ContactSection from "./sections/ContactSection";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
+import EventSponsorsSection from "./sections/EventSponsorsSection";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <ThemesSection />
         <PitchSection />
         <EssayContestSection />
+        <EventSponsorsSection />
+        <EventPartnersSection />
         <PartnersSection />
         <ExhibitionSection />
         <SpeakerSection />
