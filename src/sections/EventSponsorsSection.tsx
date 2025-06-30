@@ -9,12 +9,13 @@ const sponsors = [
 
 const EventSponsorsSection: React.FC = () => {
   return (
-    <section className="py-20 bg-primary-300">
+    <section className="py-20 bg-primary-900">
       <div className="container mx-auto px-4 md:px-6">
         <SectionTitle
           title="Event Sponsors"
           subtitle="Special thanks to our sponsors for supporting the Nigeria Stablecoin Summit."
           center
+          light
         />
         <motion.div
           initial={{ opacity: 0, y: 30 }}
