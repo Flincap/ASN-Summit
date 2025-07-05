@@ -7,6 +7,7 @@ const partners = [
   { src: "/partners/siban.png", alt: "SIBAN" },
   { src: "/partners/web3bridge.png", alt: "Web3Bridge" },
   { src: "/partners/Women%20in%20DeFi.png", alt: "Women in DeFi" },
+  { src: "/partners/nirvana.png", alt: "Nirvana Academy" },
 ];
 
 const EventPartnersSection: React.FC = () => {
