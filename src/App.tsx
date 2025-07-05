@@ -1,4 +1,3 @@
-import React from "react";
 import Navbar from "./components/Navbar";
 import HeroSection from "./sections/HeroSection";
 import TicketSection from "./sections/TicketSection";
@@ -11,11 +10,11 @@ import EssayContestSection from "./sections/EssayContestSection";
 import EventPartnersSection from "./sections/EventPartnersSection";
 import PartnersSection from "./sections/PartnersSection";
 import ExhibitionSection from "./sections/ExhibitionSection";
-import SpeakerSection from "./sections/SpeakerSection";
 import ContactSection from "./sections/ContactSection";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import EventSponsorsSection from "./sections/EventSponsorsSection";
+import SpeakersSection from "./sections/SpeakersSection";
 
 function App() {
   return (
@@ -28,13 +27,13 @@ function App() {
         <StatsSection />
         <WhatsNewSection />
         <ThemesSection />
-        <PitchSection />
-        <EssayContestSection />
+        <SpeakersSection />
         <EventSponsorsSection />
         <EventPartnersSection />
         <PartnersSection />
+        <PitchSection />
+        <EssayContestSection />
         <ExhibitionSection />
-        <SpeakerSection />
         <ContactSection />
       </main>
       <Footer />

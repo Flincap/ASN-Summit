@@ -5,6 +5,9 @@ import SectionTitle from "../components/SectionTitle";
 const sponsors = [
   { src: "/sponsors/Flincap.png", alt: "Flincap" },
   { src: "/sponsors/Solana.png", alt: "Solana" },
+  { src: "/sponsors/roqqu.png", alt: "Roqqu" },
+  { src: "/sponsors/Flitaa.png", alt: "Flitaa" },
+  { src: "/sponsors/Lisk.png", alt: "Lisk" },
 ];
 
 const EventSponsorsSection: React.FC = () => {
@@ -29,7 +32,7 @@ const EventSponsorsSection: React.FC = () => {
               key={sponsor.alt}
               src={sponsor.src}
               alt={sponsor.alt}
-              className="h-16 md:h-20 object-contain max-w-[180px]"
+              className="h-16 md:h-40 object-contain max-w-[180px]"
             />
           ))}
         </motion.div>
