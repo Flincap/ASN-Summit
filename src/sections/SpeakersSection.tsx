@@ -3,6 +3,31 @@ import SectionTitle from "../components/SectionTitle";
 
 const speakers = [
   {
+    src: "/speakers/Nathaniel%20Luz.jpg",
+    name: "Nathaniel Luz",
+    title: "President, Africa Stablecoin Network",
+  },
+  {
+    src: "/speakers/Iyinoluwa%20Aboyeji.PNG",
+    name: "Iyinoluwa E. Aboyeji",
+    title: "Founding Partner, Future Africa",
+  },
+  {
+    src: "/speakers/Harry%20Obi.jpg",
+    name: "Harry Obi",
+    title: "Co-Lead, Superteam NG",
+  },
+  {
+    src: "/speakers/TNL.JPG",
+    name: "Tosin N. Luz",
+    title: "CEO, Nexply Compliance",
+  },
+  {
+    src: "/speakers/Obinna%20Iwuno.jpg",
+    name: "Obinna Iwuno",
+    title: "President, SiBAN",
+  },
+  {
     src: "/speakers/Chidubem%20Emelumadu.JPEG",
     name: "Chidubem Emelumadu",
     title: "Ecosystem Lead(Africa), Lisk",
