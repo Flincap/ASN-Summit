@@ -5,7 +5,7 @@ import SectionTitle from "../components/SectionTitle";
 const sponsors = [
   { src: "/sponsors/Flincap.png", alt: "Flincap" },
   { src: "/sponsors/Solana.png", alt: "Solana" },
-  { src: "/sponsors/roqqu.png", alt: "Roqqu" },
+  { src: "/sponsors/roqqu.svg", alt: "Roqqu" },
   { src: "/sponsors/Flitaa.png", alt: "Flitaa" },
   { src: "/sponsors/Lisk.png", alt: "Lisk" },
 ];
@@ -25,14 +25,16 @@ const EventSponsorsSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7 }}
-          className="flex flex-wrap items-center justify-center gap-12 p-8 mt-10"
+          className="flex flex-col lg:flex-row lg:flex-wrap items-center justify-center gap-8 p-8 mt-10"
         >
           {sponsors.map((sponsor) => (
             <img
               key={sponsor.alt}
               src={sponsor.src}
               alt={sponsor.alt}
-              className="h-16 md:h-40 object-contain max-w-[180px]"
+              className={`h-20 md:h-16 object-contain ${
+                sponsor.alt === "Roqqu" ? "h-44 md:h-48" : "w-auto"
+              }`}
             />
           ))}
         </motion.div>
