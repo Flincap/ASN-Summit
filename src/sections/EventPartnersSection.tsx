@@ -8,6 +8,7 @@ const partners = [
   { src: "/partners/web3bridge.png", alt: "Web3Bridge" },
   { src: "/partners/Women%20in%20DeFi.png", alt: "Women in DeFi" },
   { src: "/partners/nirvana.png", alt: "Nirvana Academy" },
+  { src: "/partners/base.svg", alt: "Base Network" },
 ];
 
 const EventPartnersSection: React.FC = () => {
@@ -24,7 +25,7 @@ const EventPartnersSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7 }}
-          className="flex flex-wrap items-center justify-center gap-12 bg-white rounded-xl p-8 shadow-custom mt-10"
+          className="flex flex-col lg:flex-row items-center justify-center gap-12 bg-white rounded-xl p-8 shadow-custom mt-10"
         >
           {partners.map((partner) => (
             <img
