@@ -82,6 +82,21 @@ const speakers = [
     name: "Joseph Olaoluwa",
     title: "Managing Editor, Condia",
   },
+  {
+    src: "/speakers/Zebulun%20Ajayi.jpg",
+    name: "Zebulun Ajayi",
+    title: "Web3 Creative Director",
+  },
+  {
+    src: "/speakers/Nicolas%20Akpas.jpg",
+    name: "Nicolas Akpas",
+    title: "CEO, Chainconsults",
+  },
+  {
+    src: "/speakers/Damilare%20Aregbesola.JPG",
+    name: "Damilare Aregbesola",
+    title: "West-Africa Lead, Base",
+  },
 ];
 
 const SpeakersSection: React.FC = () => {
