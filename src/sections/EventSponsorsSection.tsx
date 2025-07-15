@@ -5,8 +5,7 @@ import SectionTitle from "../components/SectionTitle";
 const sponsors = [
   { src: "/sponsors/Flincap.png", alt: "Flincap" },
   { src: "/sponsors/Solana.png", alt: "Solana" },
-  { src: "/sponsors/roqqu.svg", alt: "Roqqu" },
-  { src: "/sponsors/Flitaa.png", alt: "Flitaa" },
+  { src: "/sponsors/Upesa.png", alt: "Upesa" },
   { src: "/sponsors/Lisk.png", alt: "Lisk" },
 ];
 
