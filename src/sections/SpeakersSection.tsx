@@ -63,19 +63,19 @@ const speakers = [
     title: "CEO, BoundlessPay",
   },
   {
-    src: "/speakers/Edidiong%20Sebastian.JPG",
-    name: "Edidiong Sebastian",
-    title: "Founder, Techminded Lawyers",
-  },
-  {
-    src: "/speakers/Tony%20Obiajuru.JPEG",
-    name: "Tony Obiajuru",
-    title: "Event Host",
-  },
-  {
     src: "/speakers/Sarah%20Idahosa.png",
     name: "Sarah Idahosa",
     title: "Founder, Women in DeFi",
+  },
+  {
+    src: "/speakers/Boyejo%20Oluwafemi.jpeg",
+    name: "Boyejo Oluwafemi",
+    title: "Founder, Upesa",
+  },
+  {
+    src: "/speakers/Zunnurayn%20Idris.jpg",
+    name: "Zunnurayni Idris",
+    title: "CEO, BCH HUB",
   },
   {
     src: "/speakers/Joseph%20Olaoluwa.jpg",
@@ -91,6 +91,16 @@ const speakers = [
     src: "/speakers/Nicolas%20Akpas.jpg",
     name: "Nicolas Akpas",
     title: "CEO, Chainconsults",
+  },
+  {
+    src: "/speakers/Edidiong%20Sebastian.JPG",
+    name: "Edidiong Sebastian",
+    title: "Founder, Techminded Lawyers",
+  },
+  {
+    src: "/speakers/Tony%20Obiajuru.JPEG",
+    name: "Tony Obiajuru",
+    title: "Event Host",
   },
   {
     src: "/speakers/Damilare%20Aregbesola.JPG",
@@ -115,7 +125,7 @@ const SpeakersSection: React.FC = () => {
                 <img
                   src={speaker.src}
                   alt={speaker.name}
-                  className="object-cover w-full h-full"
+                  className="object-cover w-full h-full rounded-md"
                 />
               </div>
               <div className="mt-4 text-center">
