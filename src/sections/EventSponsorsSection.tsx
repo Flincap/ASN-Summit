@@ -6,7 +6,11 @@ const sponsors = [
   { src: "/sponsors/Flincap.png", alt: "Flincap" },
   { src: "/sponsors/Solana.png", alt: "Solana" },
   { src: "/sponsors/Upesa.png", alt: "Upesa" },
+  { src: "/sponsors/cloudplexo.svg", alt: "Cloud Plexo" },
+  { src: "/sponsors/zabira.png", alt: "Zabira" },
+  { src: "/sponsors/chainconsults.png", alt: "Chain Consults" },
   { src: "/sponsors/Lisk.png", alt: "Lisk" },
+  { src: "/sponsors/BPay.png", alt: "Boundless Pay" },
 ];
 
 const EventSponsorsSection: React.FC = () => {
@@ -24,7 +28,7 @@ const EventSponsorsSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.7 }}
-          className="flex flex-col lg:flex-row lg:flex-wrap items-center justify-center gap-8 p-8 mt-10"
+          className="flex flex-col lg:flex-row lg:flex-wrap items-center justify-center gap-10 p-8 mt-10"
         >
           {sponsors.map((sponsor) => (
             <img
@@ -33,7 +37,7 @@ const EventSponsorsSection: React.FC = () => {
               alt={sponsor.alt}
               className={`h-20 md:h-16 object-contain ${
                 sponsor.alt === "Roqqu" ? "h-44 md:h-48" : "w-auto"
-              }`}
+              } ${sponsor.alt === "Zabira" ? "h-36 md:h-40" : "w-auto"}`}
             />
           ))}
         </motion.div>

@@ -28,44 +28,25 @@ const speakers = [
     title: "President, SiBAN",
   },
   {
+    src: "/speakers/Ike%20Ekemah.png",
+    name: "Ike Ekemah",
+    title: "Marketing & Commnuncations Manager, Zabira Technologies",
+  },
+  {
+    src: "/speakers/Zane%20Suren.jpeg",
+    name: "Zane Suren",
+    title:
+      "Managing Director, Commercial, Middle East and Africa Company- Zodia",
+  },
+  {
     src: "/speakers/Chidubem%20Emelumadu.JPEG",
     name: "Chidubem Emelumadu",
     title: "Ecosystem Lead(Africa), Lisk",
   },
   {
-    src: "/speakers/Eseognene%20Onomor.jpg",
-    name: "Eseognene Onomor",
-    title: "CEO, Roqqu",
-  },
-  {
-    src: "/speakers/Samuel%20Xeus.jpg",
-    name: "Samuel Xeus",
-    title: "Founder, Nirvana Academy",
-  },
-  {
-    src: "/speakers/Cynthia%20Chisom.png",
-    name: "Cynthia Chisom",
-    title: "Principal Partner, SDC Startup School",
-  },
-  {
-    src: "/speakers/Ayodeji%20Awosika.JPEG",
-    name: "Ayodeji Awosika",
-    title: "Founder, Web3Bridge",
-  },
-  {
-    src: "/speakers/Monalisa%20Agbata.jpg",
-    name: "Monalisa Agbata",
-    title: "CEO and Co-Founder, OneDev",
-  },
-  {
     src: "/speakers/Franklin%20Peters.jpg",
     name: "Franklin Peters",
     title: "CEO, BoundlessPay",
-  },
-  {
-    src: "/speakers/Sarah%20Idahosa.png",
-    name: "Sarah Idahosa",
-    title: "Founder, Women in DeFi",
   },
   {
     src: "/speakers/Boyejo%20Oluwafemi.jpeg",
@@ -78,6 +59,56 @@ const speakers = [
     title: "CEO, BCH HUB",
   },
   {
+    src: "/speakers/Gbenga%20Omosuyi.PNG",
+    name: "Gbenga Omosuyi",
+    title: "Head of Strategic Partnerships at BitGo",
+  },
+  {
+    src: "/speakers/Cynthia%20Chisom.png",
+    name: "Cynthia Chisom",
+    title: "Principal Partner, SDC Startup School",
+  },
+  {
+    src: "/speakers/Ayodeji%20Awosika.JPEG",
+    name: "Ayodeji Awosika",
+    title: "Founder, Web3Bridge",
+  },
+  {
+    src: "/speakers/Samuel%20Xeus.jpg",
+    name: "Samuel Xeus",
+    title: "Founder, Nirvana Academy",
+  },
+  {
+    src: "/speakers/Monalisa%20Agbata.jpg",
+    name: "Monalisa Agbata",
+    title: "CEO and Co-Founder, OneDev",
+  },
+  {
+    src: "/speakers/Sarah%20Idahosa.png",
+    name: "Sarah Idahosa",
+    title: "Founder, Women in DeFi",
+  },
+  {
+    src: "/speakers/Eseognene%20Onomor.jpg",
+    name: "Eseognene Onomor",
+    title: "CEO, Roqqu",
+  },
+  {
+    src: "/speakers/Nicolas%20Akpas.jpg",
+    name: "Nicolas Akpas",
+    title: "CEO, Chainconsults",
+  },
+  {
+    src: "/speakers/Damilare%20Aregbesola.JPG",
+    name: "Damilare Aregbesola",
+    title: "West-Africa Lead, Base",
+  },
+  {
+    src: "/speakers/Edidiong%20Sebastian.JPG",
+    name: "Edidiong Sebastian",
+    title: "Founder, Techminded Lawyers",
+  },
+  {
     src: "/speakers/Joseph%20Olaoluwa.jpg",
     name: "Joseph Olaoluwa",
     title: "Managing Editor, Condia",
@@ -88,24 +119,9 @@ const speakers = [
     title: "Web3 Creative Director",
   },
   {
-    src: "/speakers/Nicolas%20Akpas.jpg",
-    name: "Nicolas Akpas",
-    title: "CEO, Chainconsults",
-  },
-  {
-    src: "/speakers/Edidiong%20Sebastian.JPG",
-    name: "Edidiong Sebastian",
-    title: "Founder, Techminded Lawyers",
-  },
-  {
     src: "/speakers/Tony%20Obiajuru.JPEG",
     name: "Tony Obiajuru",
     title: "Event Host",
-  },
-  {
-    src: "/speakers/Damilare%20Aregbesola.JPG",
-    name: "Damilare Aregbesola",
-    title: "West-Africa Lead, Base",
   },
 ];
 
