@@ -143,6 +143,13 @@ const HeroSection: React.FC = () => {
             <Button
               variant="outline"
               className="border-white text-white hover:bg-white hover:bg-opacity-10"
+              href="https://docs.google.com/document/d/1287GxfxQB_Tn4AkhFmgJiysQPlV3IbhUXJy8Cjd2lA4/edit?usp=drivesdk"
+            >
+              View Event Agenda
+            </Button>
+            <Button
+              variant="outline"
+              className="border-white text-white hover:bg-white hover:bg-opacity-10"
               href="mailto:nath@afristablecoin.org?subject=Sponsorship%20Deck%20Request"
             >
               Request Sponsorship Deck

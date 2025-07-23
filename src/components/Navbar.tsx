@@ -74,11 +74,18 @@ const Navbar: React.FC = () => {
         <div className="container mx-auto px-4 py-4 bg-white shadow-lg rounded-b-lg">
           <nav className="flex flex-col space-y-4">
             <a
-              href="https://tix.africa/afristablecoin"
+              href="https://tix.africa/ngstablecoin"
               className="px-5 py-2.5 rounded-md bg-primary-600 text-white font-medium text-center hover:bg-primary-700 transition-all"
               onClick={toggleMenu}
             >
               Get Tickets
+            </a>
+            <a
+              href="https://docs.google.com/document/d/1287GxfxQB_Tn4AkhFmgJiysQPlV3IbhUXJy8Cjd2lA4/edit?usp=drivesdk"
+              className="px-5 py-2.5 rounded-md border-2 border-primary-600 text-primary-600 font-medium text-center hover:bg-primary-50 transition-all"
+              onClick={toggleMenu}
+            >
+              View Event Agenda
             </a>
             <a
               href="mailto:nath@afristablecoin.org?subject=Sponsorship%20Deck%20Request"

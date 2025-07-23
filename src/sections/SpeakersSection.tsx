@@ -3,6 +3,11 @@ import SectionTitle from "../components/SectionTitle";
 
 const speakers = [
   {
+    src: "/speakers/Emomotimi%20Agama.JPG",
+    name: "Dr. Emomotimi Agama",
+    title: "DG, Securities and Exchange Commission",
+  },
+  {
     src: "/speakers/Nathaniel%20Luz.jpg",
     name: "Nathaniel Luz",
     title: "President, Africa Stablecoin Network",
