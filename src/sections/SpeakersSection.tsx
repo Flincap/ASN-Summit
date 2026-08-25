@@ -1,164 +1,55 @@
 import React from "react";
-import SectionTitle from "../components/SectionTitle";
-
-const speakers = [
-  {
-    src: "/speakers/Emomotimi%20Agama.JPG",
-    name: "Dr. Emomotimi Agama",
-    title: "DG, Securities and Exchange Commission",
-  },
-  {
-    src: "/speakers/Nathaniel%20Luz.jpg",
-    name: "Nathaniel Luz",
-    title: "President, Africa Stablecoin Network",
-  },
-  {
-    src: "/speakers/Iyinoluwa%20Aboyeji.PNG",
-    name: "Iyinoluwa E. Aboyeji",
-    title: "Founding Partner, Future Africa",
-  },
-  {
-    src: "/speakers/Harry%20Obi.jpg",
-    name: "Harry Obi",
-    title: "Co-Lead, Superteam NG",
-  },
-  {
-    src: "/speakers/TNL.JPG",
-    name: "Tosin N. Luz",
-    title: "CEO, Nexply Compliance",
-  },
-  {
-    src: "/speakers/Obinna%20Iwuno.jpg",
-    name: "Obinna Iwuno",
-    title: "President, SiBAN",
-  },
-  {
-    src: "/speakers/Ike%20Ekemah.png",
-    name: "Ike Ekemah",
-    title: "Marketing & Commnuncations Manager, Zabira Technologies",
-  },
-  {
-    src: "/speakers/Zane%20Suren.jpeg",
-    name: "Zane Suren",
-    title:
-      "Managing Director, Commercial, Middle East and Africa Company- Zodia",
-  },
-  {
-    src: "/speakers/Chidubem%20Emelumadu.JPEG",
-    name: "Chidubem Emelumadu",
-    title: "Ecosystem Lead(Africa), Lisk",
-  },
-  {
-    src: "/speakers/Franklin%20Peters.jpg",
-    name: "Franklin Peters",
-    title: "CEO, BoundlessPay",
-  },
-  {
-    src: "/speakers/Boyejo%20Oluwafemi.jpeg",
-    name: "Boyejo Oluwafemi",
-    title: "Founder, Upesa",
-  },
-  {
-    src: "/speakers/Zunnurayn%20Idris.jpg",
-    name: "Zunnurayni Idris",
-    title: "CEO, BCH HUB",
-  },
-  {
-    src: "/speakers/Gbenga%20Omosuyi.PNG",
-    name: "Gbenga Omosuyi",
-    title: "Head of Strategic Partnerships at BitGo",
-  },
-  {
-    src: "/speakers/Cynthia%20Chisom.png",
-    name: "Cynthia Chisom",
-    title: "Principal Partner, SDC Startup School",
-  },
-  {
-    src: "/speakers/Ayodeji%20Awosika.JPEG",
-    name: "Ayodeji Awosika",
-    title: "Founder, Web3Bridge",
-  },
-  {
-    src: "/speakers/Samuel%20Xeus.jpg",
-    name: "Samuel Xeus",
-    title: "Founder, Nirvana Academy",
-  },
-  {
-    src: "/speakers/Monalisa%20Agbata.jpg",
-    name: "Monalisa Agbata",
-    title: "CEO and Co-Founder, OneDev",
-  },
-  {
-    src: "/speakers/Sarah%20Idahosa.png",
-    name: "Sarah Idahosa",
-    title: "Founder, Women in DeFi",
-  },
-  {
-    src: "/speakers/Eseognene%20Onomor.jpg",
-    name: "Eseognene Onomor",
-    title: "CEO, Roqqu",
-  },
-  {
-    src: "/speakers/Nicolas%20Akpas.jpg",
-    name: "Nicolas Akpas",
-    title: "CEO, Chainconsults",
-  },
-  {
-    src: "/speakers/Damilare%20Aregbesola.JPG",
-    name: "Damilare Aregbesola",
-    title: "West-Africa Lead, Base",
-  },
-  {
-    src: "/speakers/Edidiong%20Sebastian.JPG",
-    name: "Edidiong Sebastian",
-    title: "Founder, Techminded Lawyers",
-  },
-  {
-    src: "/speakers/Joseph%20Olaoluwa.jpg",
-    name: "Joseph Olaoluwa",
-    title: "Managing Editor, Condia",
-  },
-  {
-    src: "/speakers/Zebulun%20Ajayi.jpg",
-    name: "Zebulun Ajayi",
-    title: "Web3 Creative Director",
-  },
-  {
-    src: "/speakers/Tony%20Obiajuru.JPEG",
-    name: "Tony Obiajuru",
-    title: "Event Host",
-  },
-];
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import SectionHeading from "../components/SectionHeading";
+import { previousSpeakers } from "../data/speakers";
 
 const SpeakersSection: React.FC = () => {
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.08 });
+
   return (
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-6">
-        <SectionTitle
-          title="Meet the Speakers"
-          subtitle="Visionaries, leaders, and innovators shaping the future."
-          center
+    <section id="speakers" className="bg-paper py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <SectionHeading
+          eyebrow="Previous speakers"
+          title="Who has taken the stage before"
+          intro="Speakers from earlier editions of the platform. The 2027 programme is announced closer to the date."
         />
-        <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 mt-12">
-          {speakers.map((speaker, idx) => (
-            <div key={idx} className="flex flex-col items-center">
-              <div className="w-[80%] h-96 md:w-60 md:h-72 overflow-hidden shadow-lg bg-gray-100 flex items-center justify-center">
+
+        <div
+          ref={ref}
+          className="mt-16 grid grid-cols-2 gap-x-6 gap-y-12 sm:gap-x-8 lg:grid-cols-4"
+        >
+          {previousSpeakers.map((speaker, i) => (
+            <motion.figure
+              key={speaker.name}
+              initial={{ opacity: 0, y: 24 }}
+              animate={inView ? { opacity: 1, y: 0 } : {}}
+              transition={{
+                duration: 0.6,
+                delay: (i % 4) * 0.09,
+                ease: [0.22, 1, 0.36, 1],
+              }}
+              className="group"
+            >
+              <div className="overflow-hidden rounded-2xl bg-indigo-100 shadow-soft">
                 <img
-                  src={speaker.src}
+                  src={speaker.image}
                   alt={speaker.name}
-                  className="object-cover w-full h-full rounded-md"
+                  loading="lazy"
+                  className="aspect-[4/5] w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                 />
               </div>
-              <div className="mt-4 text-center">
-                <h3 className="text-lg font-heading font-extrabold text-primary-700 tracking-tight mb-1 drop-shadow-sm transition-colors duration-200 hover:text-secondary-500">
+              <figcaption className="mt-5">
+                <h3 className="font-display text-[17px] font-bold leading-tight tracking-tight text-indigo-700">
                   {speaker.name}
                 </h3>
-                <p className="text-sm text-dark-500 mt-1 font-medium">
-                  {speaker.title}
+                <span className="rule mt-3 w-7" />
+                <p className="mt-3 text-[14px] leading-snug text-ink/60">
+                  {speaker.role}
                 </p>
-                <div className="w-10 h-0.5 mx-auto bg-secondary-500 mt-1"></div>
-              </div>
-            </div>
+              </figcaption>
+            </motion.figure>
           ))}
         </div>
       </div>

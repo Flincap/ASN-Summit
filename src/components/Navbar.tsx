@@ -1,102 +1,123 @@
-import React, { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Menu, X, Coins } from "lucide-react";
+import React, { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
+import { event } from "../data/event";
+import { useRegistration } from "./RegistrationContext";
+
+const links = [
+  { label: "About", href: "#about" },
+  { label: "Programme", href: "#programme" },
+  { label: "Speakers", href: "#speakers" },
+  { label: "Sponsor", href: "#sponsor" },
+  { label: "Contact", href: "#contact" },
+];
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { openRegistration } = useRegistration();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const offset = window.scrollY;
-      if (offset > 50) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    const handleScroll = () => setScrolled(window.scrollY > 24);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md py-3" : "bg-transparent py-5"
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "border-b border-indigo-100 bg-white/95 py-3 backdrop-blur-md"
+          : "border-b border-transparent py-5"
       }`}
     >
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="flex justify-between items-center">
-          <div className="z-50">
-            <Logo className="h-12" />
-          </div>
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 md:px-8">
+        <Logo />
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-4">
+        <nav className="hidden items-center gap-8 lg:flex">
+          {links.map((link) => (
             <a
-              href="https://tix.africa/ngstablecoin"
-              className="px-5 py-2.5 rounded-md bg-primary-600 text-white font-medium text-sm hover:bg-primary-700 transition-all transform hover:scale-105 duration-300"
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-ink/70 transition-colors hover:text-indigo-700"
             >
-              Get Tickets
+              {link.label}
             </a>
-            <a
-              href="mailto:nath@afristablecoin.org?subject=Sponsorship%20Deck%20Request"
-              className="px-5 py-2.5 rounded-md border-2 border-primary-600 text-primary-600 font-medium text-sm hover:bg-primary-50 transition-all transform hover:scale-105 duration-300"
-            >
-              Request Sponsorship Deck
-            </a>
-          </div>
+          ))}
+        </nav>
 
-          {/* Mobile Navigation Toggle */}
-          <button
-            className="md:hidden text-dark-700 focus:outline-none"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
+        <div className="hidden items-center gap-3 lg:flex">
+          <a
+            href={event.sponsorshipForm}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-indigo-200 px-5 py-2.5 font-display text-sm font-semibold tracking-tight text-indigo-700 transition-all duration-300 hover:border-indigo-700 hover:bg-indigo-50"
           >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            Become a sponsor
+          </a>
+          <button
+            onClick={openRegistration}
+            className="rounded-full bg-indigo-700 px-6 py-2.5 font-display text-sm font-semibold tracking-tight text-white transition-all duration-300 hover:bg-ink hover:shadow-soft"
+          >
+            Register
           </button>
         </div>
+
+        <button
+          className="rounded-full p-2 text-indigo-700 lg:hidden"
+          onClick={() => setIsOpen((v) => !v)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
+        >
+          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
       </div>
 
-      {/* Mobile Navigation Menu */}
-      <motion.div
-        className={`md:hidden ${isOpen ? "block" : "hidden"}`}
-        initial={{ opacity: 0, height: 0 }}
-        animate={{ opacity: isOpen ? 1 : 0, height: isOpen ? "auto" : 0 }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="container mx-auto px-4 py-4 bg-white shadow-lg rounded-b-lg">
-          <nav className="flex flex-col space-y-4">
-            <a
-              href="https://tix.africa/ngstablecoin"
-              className="px-5 py-2.5 rounded-md bg-primary-600 text-white font-medium text-center hover:bg-primary-700 transition-all"
-              onClick={toggleMenu}
-            >
-              Get Tickets
-            </a>
-            <a
-              href="https://docs.google.com/document/d/1287GxfxQB_Tn4AkhFmgJiysQPlV3IbhUXJy8Cjd2lA4/edit?usp=drivesdk"
-              className="px-5 py-2.5 rounded-md border-2 border-primary-600 text-primary-600 font-medium text-center hover:bg-primary-50 transition-all"
-              onClick={toggleMenu}
-            >
-              View Event Agenda
-            </a>
-            <a
-              href="mailto:nath@afristablecoin.org?subject=Sponsorship%20Deck%20Request"
-              className="px-5 py-2.5 rounded-md border-2 border-primary-600 text-primary-600 font-medium text-center hover:bg-primary-50 transition-all"
-              onClick={toggleMenu}
-            >
-              Request Sponsorship Deck
-            </a>
-          </nav>
-        </div>
-      </motion.div>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            className="overflow-hidden lg:hidden"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <nav className="mx-5 mt-3 flex flex-col gap-1 rounded-2xl border border-indigo-100 bg-white p-4 shadow-soft md:mx-8">
+              {links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="rounded-xl px-3 py-3 font-display text-base font-semibold tracking-tight text-indigo-700 transition-colors hover:bg-indigo-50"
+                >
+                  {link.label}
+                </a>
+              ))}
+
+              <a
+                href={event.sponsorshipForm}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="mt-2 rounded-full border border-indigo-200 px-5 py-3 text-center font-display text-sm font-semibold tracking-tight text-indigo-700"
+              >
+                Become a sponsor
+              </a>
+              <button
+                onClick={() => {
+                  setIsOpen(false);
+                  openRegistration();
+                }}
+                className="mt-2 rounded-full bg-indigo-700 px-5 py-3 font-display text-sm font-semibold tracking-tight text-white"
+              >
+                Register
+              </button>
+            </nav>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
