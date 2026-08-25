@@ -9,6 +9,8 @@ import AboutSection from "./sections/AboutSection";
 import ProgrammeSection from "./sections/ProgrammeSection";
 import ThemesSection from "./sections/ThemesSection";
 import SpeakersSection from "./sections/SpeakersSection";
+import BrandsSection from "./sections/BrandsSection";
+import GallerySection from "./sections/GallerySection";
 import TakePartSection from "./sections/TakePartSection";
 import ContactSection from "./sections/ContactSection";
 
@@ -23,6 +25,8 @@ function App() {
           <ProgrammeSection />
           <ThemesSection />
           <SpeakersSection />
+          <BrandsSection />
+          <GallerySection />
           <TakePartSection />
           <ContactSection />
         </main>

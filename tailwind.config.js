@@ -53,11 +53,21 @@ export default {
           from: { opacity: "0", transform: "translateY(14px)" },
           to: { opacity: "1", transform: "translateY(0)" },
         },
+        slideLeft: {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(calc(-50% - var(--marquee-gap, 0px) / 2))" },
+        },
+        slideRight: {
+          from: { transform: "translateX(calc(-50% - var(--marquee-gap, 0px) / 2))" },
+          to: { transform: "translateX(0)" },
+        },
       },
       animation: {
         drift: "drift 22s ease-in-out infinite",
         "drift-slow": "driftSlow 30s ease-in-out infinite",
         rise: "rise 0.7s cubic-bezier(0.22,1,0.36,1) both",
+        "slide-left": "slideLeft 60s linear infinite",
+        "slide-right": "slideRight 60s linear infinite",
       },
     },
   },
