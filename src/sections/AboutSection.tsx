@@ -1,94 +1,119 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
-import SectionTitle from "../components/SectionTitle";
+import { Minus, Plus } from "lucide-react";
+import SectionHeading from "../components/SectionHeading";
+import { event } from "../data/event";
+
+const facts = [
+  { value: "750", label: "Senior executives in the room" },
+  { value: "2", label: "Days, mixer and main conference" },
+  { value: "3rd", label: "Edition of the platform" },
+];
+
+const fullBrief = [
+  "Africa's payment systems are being rebuilt in real time. Instant payment rails now operate in more than thirty African countries. Cross-border settlement in African currencies is no longer theoretical. And stablecoins have become a working part of how value moves between African markets, whether or not the rules have caught up.",
+  "The Africa Payments and Stablecoin Summit exists to put the people making those decisions in the same room.",
+  "Convened by the Africa Stablecoin Network, the Summit gathers 750 senior executives from banking, payments, fintech and financial regulation across the continent. The programme is built around the institutions that write and operate the rules, alongside the operators building on top of them. Sessions cover stablecoin regulation and legislative design, cross-border settlement infrastructure, the treatment of digital assets under African law, and what the next generation of payment rails means for banks and their customers.",
+  "The Summit is the successor to the Nigeria Stablecoin Summit, which established itself as Nigeria's leading forum on stablecoin policy over two editions. The 2027 edition takes the platform continental.",
+  "Proceedings open with an invitation-only executive mixer on the evening of Wednesday 9 June, followed by a full conference day on Thursday 10 June.",
+];
 
 const AboutSection: React.FC = () => {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
-
-  const contentVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.7,
-        ease: "easeOut",
-      },
-    },
-  };
+  const [expanded, setExpanded] = useState(false);
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="about" className="py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-6">
-        <SectionTitle
-          title="About the Event"
-          subtitle="Empowering Africa's Stablecoin Ecosystem"
-        />
+    <section id="about" className="bg-white py-24 md:py-32">
+      <div className="mx-auto max-w-7xl px-5 md:px-8">
+        <div className="grid gap-16 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
+          <div>
+            <SectionHeading eyebrow="About the Summit" title="Two days in Lagos" />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div className="mt-8 space-y-6 text-[17px] leading-relaxed text-ink/75">
+              <p>
+                The Africa Payments and Stablecoin Summit brings together 750
+                senior executives from banking, payments and finance across
+                Africa for two days in Lagos. Convened by the Africa Stablecoin
+                Network, it is the continent's foremost gathering on stablecoin
+                regulation, cross-border settlement and the future of African
+                payment infrastructure. The Summit opens with an
+                invitation-only mixer on the evening of Wednesday 9 June,
+                followed by the main conference on Thursday 10 June.
+              </p>
+            </div>
+
+            <button
+              onClick={() => setExpanded((v) => !v)}
+              aria-expanded={expanded}
+              className="group mt-8 inline-flex items-center gap-2.5 font-display text-[15px] font-semibold tracking-tight text-indigo-700 transition-colors hover:text-green-600"
+            >
+              <span className="flex h-6 w-6 items-center justify-center rounded-full border border-indigo-200 transition-colors group-hover:border-green-500">
+                {expanded ? <Minus size={13} /> : <Plus size={13} />}
+              </span>
+              {expanded ? "Show less" : "Read the full brief"}
+            </button>
+
+            <AnimatePresence initial={false}>
+              {expanded && (
+                <motion.div
+                  key="brief"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: "auto" }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                  className="overflow-hidden"
+                >
+                  <div className="mt-8 space-y-6 border-l-2 border-green-500 pl-6 text-[17px] leading-relaxed text-ink/75">
+                    {fullBrief.map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
+                    <p className="font-display font-semibold text-indigo-700">
+                      Lagos, Nigeria. 9 and 10 June 2027.
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+
           <motion.div
             ref={ref}
-            initial="hidden"
-            animate={inView ? "visible" : "hidden"}
-            variants={contentVariants}
-            className="order-2 lg:order-1"
+            initial={{ opacity: 0, y: 24 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:pt-4"
           >
-            <div className="prose max-w-none">
-              <p className="text-lg leading-relaxed mb-6">
-                Africa is undergoing a financial awakening. From fintech to
-                blockchain, digital currencies to CBDCs, the conversation is
-                rapidly evolving — and stablecoins are leading the charge.
-              </p>
-              <p className="text-lg leading-relaxed mb-6">
-                Now in its most anticipated edition yet, the Nigeria Stablecoin
-                Summit is the continent's premier platform for deep insights,
-                live showcases, and high-value networking across the digital
-                currency and stablecoin space.
-              </p>
-              <p className="text-lg leading-relaxed">
-                Join experts from payments, blockchain, policy, banking,
-                fintech, and regtech as they discuss what's next — and how we
-                build it. This July, we convene the country's most
-                forward-thinking builders, regulators, innovators, and investors
-                to explore how stablecoins are reshaping finance, empowering
-                people, and accelerating economic transformation across Africa.
-              </p>
+            <div className="overflow-hidden rounded-2xl shadow-soft">
+              <img
+                src="/hero-bg.jpg"
+                alt="Delegates in conversation at the Nigeria Stablecoin Summit"
+                loading="lazy"
+                className="h-64 w-full object-cover md:h-80"
+              />
             </div>
-          </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={
-              inView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.95 }
-            }
-            transition={{ duration: 0.7, delay: 0.2 }}
-            className="order-1 lg:order-2"
-          >
-            <div className="bg-gradient-to-br from-primary-100 to-primary-50 p-8 rounded-xl">
-              <h3 className="font-heading font-bold text-2xl text-primary-800 mb-6">
-                The Future of Money, Built in Africa
-              </h3>
-
-              <div className="space-y-4">
-                <p className="text-primary-700">
-                  This isn't just a conference. It's a launchpad for the next
-                  era of financial infrastructure.
-                </p>
-
-                <div className="bg-white p-5 rounded-lg shadow-even">
-                  <p className="italic text-primary-600 font-medium">
-                    "The Nigeria Stablecoin Summit brings together the entire
-                    ecosystem — from builders to regulators — creating a unique
-                    platform for collaboration that's driving innovation
-                    forward."
-                  </p>
+            <dl className="mt-8 divide-y divide-indigo-100 border-y border-indigo-100">
+              {facts.map((fact) => (
+                <div
+                  key={fact.label}
+                  className="flex items-baseline gap-6 py-5"
+                >
+                  <dt className="w-16 shrink-0 font-display text-3xl font-bold tracking-tight text-indigo-700">
+                    {fact.value}
+                  </dt>
+                  <dd className="text-[15px] leading-snug text-ink/65">
+                    {fact.label}
+                  </dd>
                 </div>
-              </div>
-            </div>
+              ))}
+            </dl>
+
+            <p className="mt-6 text-[15px] leading-relaxed text-ink/60">
+              Successor to the Nigeria Stablecoin Summit, whose second edition
+              was held on 30 July 2026 at the {event.venue.split(",")[0]},
+              Victoria Island.
+            </p>
           </motion.div>
         </div>
       </div>

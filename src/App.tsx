@@ -1,44 +1,36 @@
 import Navbar from "./components/Navbar";
-import HeroSection from "./sections/HeroSection";
-import TicketSection from "./sections/TicketSection";
-import AboutSection from "./sections/AboutSection";
-import StatsSection from "./sections/StatsSection";
-import WhatsNewSection from "./sections/WhatsNewSection";
-import ThemesSection from "./sections/ThemesSection";
-import PitchSection from "./sections/PitchSection";
-import EssayContestSection from "./sections/EssayContestSection";
-import EventPartnersSection from "./sections/EventPartnersSection";
-import PartnersSection from "./sections/PartnersSection";
-import ExhibitionSection from "./sections/ExhibitionSection";
-import ContactSection from "./sections/ContactSection";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
-import EventSponsorsSection from "./sections/EventSponsorsSection";
+import RegisterModal from "./components/RegisterModal";
+import { RegistrationProvider } from "./components/RegistrationContext";
+
+import HeroSection from "./sections/HeroSection";
+import AboutSection from "./sections/AboutSection";
+import ProgrammeSection from "./sections/ProgrammeSection";
+import ThemesSection from "./sections/ThemesSection";
 import SpeakersSection from "./sections/SpeakersSection";
+import TakePartSection from "./sections/TakePartSection";
+import ContactSection from "./sections/ContactSection";
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-dark-700">
-      <Navbar />
-      <main>
-        <HeroSection />
-        <TicketSection />
-        <AboutSection />
-        <StatsSection />
-        <WhatsNewSection />
-        <ThemesSection />
-        <SpeakersSection />
-        <EventSponsorsSection />
-        <EventPartnersSection />
-        <PartnersSection />
-        <PitchSection />
-        <EssayContestSection />
-        <ExhibitionSection />
-        <ContactSection />
-      </main>
-      <Footer />
-      <ScrollToTop />
-    </div>
+    <RegistrationProvider>
+      <div className="min-h-screen bg-white">
+        <Navbar />
+        <main>
+          <HeroSection />
+          <AboutSection />
+          <ProgrammeSection />
+          <ThemesSection />
+          <SpeakersSection />
+          <TakePartSection />
+          <ContactSection />
+        </main>
+        <Footer />
+        <ScrollToTop />
+        <RegisterModal />
+      </div>
+    </RegistrationProvider>
   );
 }
 

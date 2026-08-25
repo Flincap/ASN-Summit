@@ -1,160 +1,169 @@
-import React, { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import React from "react";
 import Countdown from "react-countdown";
-import { MapPin, Clock, Calendar } from "lucide-react";
-import Button from "../components/Button";
+import { ArrowUpRight } from "lucide-react";
+import Aurora from "../components/Aurora";
+import { event } from "../data/event";
+import { useRegistration } from "../components/RegistrationContext";
 
-const HeroSection: React.FC = () => {
-  const eventDate = new Date("2025-07-24T08:00:00").getTime();
+const glance = [
+  { value: "750", label: "Senior executives expected" },
+  { value: "2 days", label: "Mixer, then the main conference" },
+  { value: "Oriental Hotel", label: "Victoria Island, Lagos" },
+];
 
-  const backgroundImages = ["/hero-bg.jpg", "/hero-bg-2.JPG"];
+type CountdownRender = {
+  days: number;
+  hours: number;
+  minutes: number;
+  completed: boolean;
+};
 
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImageIndex((currentIndex) => {
-        const nextIndex = currentIndex + 1;
-        if (nextIndex >= backgroundImages.length) {
-          return 0;
-        } else {
-          return nextIndex;
-        }
-      });
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [backgroundImages.length]);
-
-  // Countdown renderer
-  const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
+const CountdownStrip: React.FC = () => {
+  const renderer = ({ days, hours, minutes, completed }: CountdownRender) => {
     if (completed) {
-      return <span>Event has started!</span>;
-    } else {
       return (
-        <div className="grid grid-cols-4 gap-2 md:gap-4 text-center">
-          <div className="bg-white bg-opacity-90 rounded-lg p-2 md:p-4">
-            <div className="text-2xl md:text-4xl font-bold text-primary-700">
-              {days}
-            </div>
-            <div className="text-xs md:text-sm text-gray-600">Days</div>
-          </div>
-          <div className="bg-white bg-opacity-90 rounded-lg p-2 md:p-4">
-            <div className="text-2xl md:text-4xl font-bold text-primary-700">
-              {hours}
-            </div>
-            <div className="text-xs md:text-sm text-gray-600">Hours</div>
-          </div>
-          <div className="bg-white bg-opacity-90 rounded-lg p-2 md:p-4">
-            <div className="text-2xl md:text-4xl font-bold text-primary-700">
-              {minutes}
-            </div>
-            <div className="text-xs md:text-sm text-gray-600">Minutes</div>
-          </div>
-          <div className="bg-white bg-opacity-90 rounded-lg p-2 md:p-4">
-            <div className="text-2xl md:text-4xl font-bold text-primary-700">
-              {seconds}
-            </div>
-            <div className="text-xs md:text-sm text-gray-600">Seconds</div>
-          </div>
-        </div>
+        <span className="font-display font-semibold text-indigo-700">
+          The Summit is under way in Lagos.
+        </span>
       );
     }
-  };
 
-  return (
-    <section className="relative min-h-screen flex items-center overflow-hidden py-20">
-      <div className="absolute inset-0">
-        {backgroundImages.map((image, index) => (
-          <motion.div
-            key={index}
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${image})` }}
-            initial={{ opacity: 0 }}
-            animate={{
-              opacity: index === currentImageIndex ? 1 : 0,
-            }}
-            transition={{ duration: 1.5, ease: "easeInOut" }}
-          />
+    const units = [
+      { value: days, label: days === 1 ? "day" : "days" },
+      { value: hours, label: hours === 1 ? "hour" : "hours" },
+      { value: minutes, label: minutes === 1 ? "min" : "mins" },
+    ];
+
+    return (
+      <div className="flex items-baseline gap-5">
+        {units.map((unit) => (
+          <div key={unit.label} className="flex items-baseline gap-1.5">
+            <span className="font-display text-2xl font-bold tabular-nums tracking-tight text-indigo-700">
+              {unit.value}
+            </span>
+            <span className="text-[11px] font-semibold uppercase tracking-eyebrow text-ink/45">
+              {unit.label}
+            </span>
+          </div>
         ))}
       </div>
-      <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]"></div>
+    );
+  };
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
-        <div className="max-w-4xl">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-          >
-            <h1 className="font-heading font-bold text-4xl md:text-5xl lg:text-6xl text-white mb-4">
-              Nigeria Stablecoin Summit
-            </h1>
-            <h2 className="text-xl md:text-2xl text-white mb-8">
-              Enhancing Adoption of a Borderless Digital Economy.
-            </h2>
-          </motion.div>
+  return <Countdown date={new Date(event.startsAt)} renderer={renderer} />;
+};
 
-          <motion.div
-            className="mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.7 }}
-          >
-            <Countdown date={eventDate} renderer={renderer} />
-          </motion.div>
+const HeroSection: React.FC = () => {
+  const { openRegistration } = useRegistration();
 
-          <motion.div
-            className="flex items-center text-white mb-4"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.7 }}
-          >
-            <MapPin className="mr-2 h-5 w-5 text-secondary-400" />
-            <span>Oriental Hotel, VI, Lagos</span>
-          </motion.div>
+  return (
+    <section
+      id="top"
+      className="relative isolate flex min-h-[100svh] items-center overflow-hidden bg-paper pb-20 pt-32 md:pb-24 md:pt-36"
+    >
+      <Aurora />
 
-          <motion.div
-            className="flex items-center text-white mb-8"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6, duration: 0.7 }}
-          >
-            <div className="flex gap-3 items-center">
-              <div className="flex items-center">
-                <Calendar className="mr-2 h-5 w-5 text-secondary-400" />
-                <span>July 24, 2025</span>
-              </div>
-              <div className="flex items-center">
-                <Clock className="mr-2 h-5 w-5 text-secondary-400" />
-                <span>8:00am WAT</span>
-              </div>
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 md:px-8">
+        <div className="grid items-end gap-14 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)] lg:gap-16">
+          <div>
+            <p
+              className="eyebrow animate-rise"
+              style={{ animationDelay: "0.05s" }}
+            >
+              Convened by the {event.convener}
+            </p>
+
+            {/* inline-block so the green rule ends exactly where the title does */}
+            <div className="mt-5 inline-block">
+              <h1
+                className="animate-rise font-display text-[2.6rem] font-bold leading-[0.98] tracking-[-0.03em] text-indigo-700 sm:text-6xl lg:text-[4.6rem]"
+                style={{ animationDelay: "0.12s" }}
+              >
+                Africa Payments &amp;
+                <br />
+                Stablecoin Summit
+              </h1>
+              <span
+                className="mt-6 block h-[4px] w-full animate-rise bg-green-500"
+                style={{ animationDelay: "0.2s" }}
+              />
             </div>
-          </motion.div>
 
-          <motion.div
-            className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.7, duration: 0.5 }}
+            <p
+              className="mt-7 max-w-xl animate-rise font-display text-xl font-medium leading-snug tracking-tight text-indigo-500 sm:text-2xl"
+              style={{ animationDelay: "0.28s" }}
+            >
+              {event.strapline}
+            </p>
+
+            {/* The date and venue bar, carried straight over from the artwork. */}
+            <div
+              className="mt-9 inline-flex animate-rise flex-wrap overflow-hidden rounded-lg shadow-soft"
+              style={{ animationDelay: "0.36s" }}
+            >
+              <span className="chip bg-indigo-700 px-5 py-3 text-sm sm:px-7 sm:py-3.5 sm:text-base">
+                {event.dateLine}
+              </span>
+              <span className="chip px-5 py-3 text-sm sm:px-7 sm:py-3.5 sm:text-base">
+                {event.city}
+              </span>
+            </div>
+
+            <div
+              className="mt-9 flex animate-rise flex-col gap-6 sm:flex-row sm:items-center sm:gap-8"
+              style={{ animationDelay: "0.44s" }}
+            >
+              <button
+                onClick={openRegistration}
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-indigo-700 px-8 py-4 font-display text-base font-semibold tracking-tight text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-ink hover:shadow-lift"
+              >
+                Register to attend
+              </button>
+
+              <a
+                href={event.sponsorshipForm}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 font-display text-base font-semibold tracking-tight text-indigo-700 transition-colors hover:text-green-600"
+              >
+                Become a sponsor
+                <ArrowUpRight
+                  size={18}
+                  className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                />
+              </a>
+            </div>
+          </div>
+
+          <aside
+            className="animate-rise rounded-2xl border border-white/70 bg-white/70 p-7 shadow-soft backdrop-blur-md md:p-8"
+            style={{ animationDelay: "0.52s" }}
           >
-            <Button variant="primary" href="https://tix.africa/ngstablecoin">
-              Get Tickets
-            </Button>
-            <Button
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:bg-opacity-10"
-              href="https://docs.google.com/document/d/1287GxfxQB_Tn4AkhFmgJiysQPlV3IbhUXJy8Cjd2lA4/edit?usp=drivesdk"
-            >
-              View Event Agenda
-            </Button>
-            <Button
-              variant="outline"
-              className="border-white text-white hover:bg-white hover:bg-opacity-10"
-              href="mailto:nath@afristablecoin.org?subject=Sponsorship%20Deck%20Request"
-            >
-              Request Sponsorship Deck
-            </Button>
-          </motion.div>
+            <p className="text-[11px] font-semibold uppercase tracking-eyebrow text-ink/40">
+              Doors open in
+            </p>
+            <div className="mt-3">
+              <CountdownStrip />
+            </div>
+
+            <dl className="mt-7 divide-y divide-indigo-100 border-t border-indigo-100">
+              {glance.map((item) => (
+                <div key={item.label} className="py-4">
+                  <dt className="font-display text-lg font-bold tracking-tight text-indigo-700">
+                    {item.value}
+                  </dt>
+                  <dd className="mt-0.5 text-[14px] leading-snug text-ink/60">
+                    {item.label}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+
+            <p className="mt-5 text-[13px] leading-relaxed text-ink/50">
+              The Wednesday evening mixer is by invitation. The main conference
+              on Thursday is open to pass holders.
+            </p>
+          </aside>
         </div>
       </div>
     </section>

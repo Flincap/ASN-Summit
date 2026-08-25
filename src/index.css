@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 88px;
+  }
+
+  body {
+    @apply bg-white text-ink/80 antialiased;
+  }
+
+  ::selection {
+    @apply bg-green-500/20 text-ink;
+  }
+
+  :focus-visible {
+    outline: 2px solid #311ea3;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* The flier's signature device: a solid indigo bar holding a fact. */
+  .chip {
+    @apply inline-flex items-center bg-ink text-white font-display font-semibold tracking-tight;
+  }
+
+  .eyebrow {
+    @apply inline-block text-[11px] font-semibold uppercase tracking-eyebrow text-green-600;
+  }
+
+  /* The green rule that sits under the title on the brand artwork. */
+  .rule {
+    @apply block h-[3px] w-16 bg-green-500;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
