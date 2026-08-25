@@ -39,6 +39,7 @@
   }
 }
 
+/* Marquee tracks must never animate for anyone who has asked for less motion. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

@@ -45,6 +45,16 @@ export const event = {
   },
 };
 
+// Photo library and recap film from the last edition.
+export const gallery = {
+  // Google Drive folder holding the full photo set.
+  driveUrl:
+    "https://drive.google.com/drive/folders/16mrdO5-lheId1-mZ_m3sY4QoVHuT8pXa",
+  // Recap film. videoId is the part of the YouTube link after youtu.be/
+  videoUrl: "https://youtu.be/x8DxbBTnbgs",
+  videoId: "x8DxbBTnbgs",
+};
+
 // The two days, shown in the Programme section.
 export const programme = [
   {

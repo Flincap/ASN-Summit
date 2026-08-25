@@ -30,22 +30,48 @@ two have to agree.
 
 ### `src/data/speakers.ts`
 
-The previous speakers list. To add someone:
+The previous speakers list, which slides across the page in two rows. Each
+card shows the photo, the name and the title, nothing else. To add someone:
 
-1. Put their photo in `public/speakers/` (portrait or square, 800px or larger)
-2. Copy one of the blocks in the file, change the name, role and image path
-3. If the filename has a space in it, write the space as `%20`
+1. Put a square photo in `public/speakers/` (512x512 or larger, .webp or .jpg)
+2. Copy one of the blocks in the file, change the three lines
 
 ```ts
 {
   name: "Full Name",
-  role: "Title, Organisation",
-  image: "/speakers/File%20Name.jpg",
+  title: "Title, Organisation",
+  image: "/speakers/file-name.webp",
 },
 ```
 
-The order in the file is the order on the page. There is no limit, the grid
-reflows on its own.
+The order in the file is the order they appear. There is no limit. The
+marquee speed is set in `src/sections/SpeakersSection.tsx` if you ever want to
+slow it down.
+
+### `src/data/brands.ts`
+
+The two logo rows under "Brands that have graced the stage". Top row is
+sponsors and institutional partners, bottom row is exhibitors and brands. Put
+logo files in `public/sponsors/` or `public/brands/` and add a line. Logos sit
+on white cards, so transparent PNG, WEBP or SVG all work.
+
+## Gallery and recap film
+
+Both live in `src/data/event.ts` under `gallery`:
+
+- **Photo library**: the `driveUrl` points at the Google Drive folder. Two
+  buttons in the Gallery section open it in a new tab.
+- **Recap film**: `videoId` is the part of a YouTube link after `youtu.be/`.
+  Change that one string to swap the film.
+
+The video does not load YouTube's scripts until someone actually presses play,
+and it uses the no-cookie domain. The still frame comes from YouTube, with a
+fallback if the video has no high-resolution thumbnail.
+
+The sliding photo rows read from `public/gallery/`, which expects files named
+`speaking-01-640.webp` through `speaking-10-640.webp`, and the same for
+`exhibiting-` and `attending-`. Ten per row. If you change the count, update
+the number in `src/sections/GallerySection.tsx`.
 
 ## Registration
 
