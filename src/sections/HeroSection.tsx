@@ -7,7 +7,7 @@ import { useRegistration } from "../components/RegistrationContext";
 
 const glance = [
   { value: "750", label: "Senior executives expected" },
-  { value: "2 days", label: "Mixer, then the main conference" },
+  { value: "3 days", label: "Mixer, then two conference days" },
   { value: "Oriental Hotel", label: "Victoria Island, Lagos" },
 ];
 
@@ -160,8 +160,8 @@ const HeroSection: React.FC = () => {
             </dl>
 
             <p className="mt-5 text-[13px] leading-relaxed text-ink/50">
-              The Wednesday evening mixer is by invitation. The main conference
-              on Thursday is open to pass holders.
+              The Tuesday evening mixer is by invitation. Both conference days
+              are open to pass holders.
             </p>
           </aside>
         </div>

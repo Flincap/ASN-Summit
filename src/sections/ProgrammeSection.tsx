@@ -18,12 +18,12 @@ const ProgrammeSection: React.FC = () => {
       <div className="relative z-10 mx-auto max-w-7xl px-5 md:px-8">
         <SectionHeading
           eyebrow="Programme"
-          title="How the two days run"
-          intro="Wednesday evening is a closed room. Thursday is the main stage. Both sit in the same building, so the conversations carry over."
+          title="How the three days run"
+          intro="Tuesday evening is a closed room. Wednesday and Thursday are the main stage. All three sit in the same building, so the conversations carry over."
           light
         />
 
-        <div ref={ref} className="mt-16 grid gap-6 md:grid-cols-2">
+        <div ref={ref} className="mt-16 grid gap-6 md:grid-cols-3">
           {programme.map((day, i) => (
             <motion.article
               key={day.date}

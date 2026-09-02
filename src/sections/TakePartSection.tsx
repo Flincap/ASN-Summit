@@ -30,7 +30,7 @@ const TakePartSection: React.FC = () => {
               <p className="mt-6 max-w-md text-[16px] leading-relaxed text-white/65">
                 General and delegate passes are open now. Delegate passes carry
                 reserved seating and access to the closed executive sessions.
-                The Wednesday mixer is by invitation.
+                The Tuesday mixer is by invitation.
               </p>
             </div>
 
