@@ -10,7 +10,7 @@ const passes = [
     label: "General pass",
     href: event.registration.general,
     summary:
-      "Access to the main conference on Thursday 10 June, including plenaries, panels and the exhibition floor.",
+      "Access to both conference days, Wednesday 9 and Thursday 10 June, including plenaries, panels and the exhibition floor.",
     forWho: "Builders, analysts, media and the wider ecosystem",
   },
   {
@@ -127,7 +127,7 @@ const RegisterModal: React.FC = () => {
 
             <p className="border-t border-indigo-100 px-6 py-4 text-xs text-ink/50 sm:px-9">
               Both links open with our ticketing partners in a new tab. The
-              Wednesday mixer is by invitation and is not sold as a pass.
+              Tuesday mixer is by invitation and is not sold as a pass.
             </p>
           </motion.div>
         </div>

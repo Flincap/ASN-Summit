@@ -46,8 +46,9 @@ const Footer: React.FC = () => {
               The Summit
             </h3>
             <ul className="mt-5 space-y-2.5 text-[15px] text-white/70">
-              <li>Wednesday 9 June 2027, executive mixer, by invitation</li>
-              <li>Thursday 10 June 2027, main conference</li>
+              <li>Tuesday 8 June 2027, executive mixer, by invitation</li>
+              <li>Wednesday 9 June 2027, conference day one</li>
+              <li>Thursday 10 June 2027, conference day two</li>
               <li>{event.venue}</li>
             </ul>
           </div>
@@ -108,7 +109,7 @@ const Footer: React.FC = () => {
           <p>
             &copy; {year} {event.convener}. All rights reserved.
           </p>
-          <p>Africa Payments and Stablecoin Summit, Lagos, 9 and 10 June 2027.</p>
+          <p>Africa Payments and Stablecoin Summit, Lagos, 8 to 10 June 2027.</p>
         </div>
       </div>
     </footer>
