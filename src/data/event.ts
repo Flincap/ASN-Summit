@@ -13,8 +13,8 @@ export const event = {
 
   dateLine: "June 8-10, 2027",
   city: "Lagos, Nigeria",
-  venue: "Oriental Hotel, Lagos, Nigeria",
-  venueAddress: "3 Lekki-Epe Expressway, Victoria Island, Lagos, Nigeria",
+  venue: "Landmark Centre, Victoria Island, Lagos",
+  venueAddress: "Water Corporation Road, Victoria Island, Lagos, Nigeria",
 
   // Used by the countdown. Mixer opens on the evening of Tuesday 8 June.
   startsAt: "2027-06-08T17:00:00+01:00",
