@@ -3,7 +3,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Minus, Plus } from "lucide-react";
 import SectionHeading from "../components/SectionHeading";
-import { event } from "../data/event";
 
 const facts = [
   { value: "750", label: "Senior executives in the room" },
@@ -112,8 +111,7 @@ const AboutSection: React.FC = () => {
 
             <p className="mt-6 text-[15px] leading-relaxed text-ink/60">
               Successor to the Nigeria Stablecoin Summit, whose second edition
-              was held on 30 July 2026 at the {event.venue.split(",")[0]},
-              Victoria Island.
+              was held on 30 July 2026 at the Oriental Hotel, Victoria Island.
             </p>
           </motion.div>
         </div>

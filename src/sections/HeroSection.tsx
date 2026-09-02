@@ -8,7 +8,7 @@ import { useRegistration } from "../components/RegistrationContext";
 const glance = [
   { value: "750", label: "Senior executives expected" },
   { value: "3 days", label: "Mixer, then two conference days" },
-  { value: "Oriental Hotel", label: "Victoria Island, Lagos" },
+  { value: "Landmark Centre", label: "Victoria Island, Lagos" },
 ];
 
 type CountdownRender = {
