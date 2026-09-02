@@ -1,7 +1,7 @@
 # Africa Payments and Stablecoin Summit
 
 Event site for the Africa Payments and Stablecoin Summit.
-Lagos, 9 and 10 June 2027. Convened by the Africa Stablecoin Network.
+Lagos, 8 to 10 June 2027. Convened by the Africa Stablecoin Network.
 
 Live at https://summit.afristablecoin.org/
 
