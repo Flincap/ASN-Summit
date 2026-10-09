@@ -11,13 +11,12 @@ export const event = {
   strapline:
     "The continent's senior banking, payments and finance leadership, in one room.",
 
-  dateLine: "June 8-10, 2027",
+  dateLine: "June 9-10, 2027",
   city: "Lagos, Nigeria",
-  venue: "Landmark Centre, Victoria Island, Lagos",
-  venueAddress: "Water Corporation Road, Victoria Island, Lagos, Nigeria",
+  venue: "Lagos, Nigeria",
 
-  // Used by the countdown. Mixer opens on the evening of Tuesday 8 June.
-  startsAt: "2027-06-08T17:00:00+01:00",
+  // Used by the countdown. Mixer opens on the evening of Wednesday 9 June.
+  startsAt: "2027-06-09T17:00:00+01:00",
 
   delegates: 750,
   convener: "Africa Stablecoin Network",
@@ -55,11 +54,11 @@ export const gallery = {
   videoId: "x8DxbBTnbgs",
 };
 
-// The three days, shown in the Programme section.
+// The two days, shown in the Programme section.
 export const programme = [
   {
     day: "Day one",
-    date: "Tuesday 8 June",
+    date: "Wednesday 9 June",
     title: "Executive mixer",
     access: "By invitation",
     time: "Evening",
@@ -68,21 +67,12 @@ export const programme = [
   },
   {
     day: "Day two",
-    date: "Wednesday 9 June",
-    title: "Conference day one",
-    access: "General and delegate passes",
-    time: "Full day",
-    description:
-      "The opening plenary and the first full day of panels, on stablecoin regulation, legislative design and the treatment of digital assets under African law.",
-  },
-  {
-    day: "Day three",
     date: "Thursday 10 June",
-    title: "Conference day two",
+    title: "Main conference",
     access: "General and delegate passes",
     time: "Full day",
     description:
-      "A second day on cross-border settlement, the payment rails being built underneath African finance, and the closing plenary.",
+      "The opening plenary, then a full day of panels on stablecoin regulation, cross-border settlement and the payment rails being built underneath African finance, through to the closing plenary.",
   },
 ];
 

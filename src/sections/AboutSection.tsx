@@ -6,7 +6,7 @@ import SectionHeading from "../components/SectionHeading";
 
 const facts = [
   { value: "750", label: "Senior executives in the room" },
-  { value: "3", label: "Days, mixer and two conference days" },
+  { value: "2", label: "Days, a mixer and a full conference day" },
   { value: "3rd", label: "Edition of the platform" },
 ];
 
@@ -15,7 +15,6 @@ const fullBrief = [
   "The Africa Payments and Stablecoin Summit exists to put the people making those decisions in the same room.",
   "Convened by the Africa Stablecoin Network, the Summit gathers 750 senior executives from banking, payments, fintech and financial regulation across the continent. The programme is built around the institutions that write and operate the rules, alongside the operators building on top of them. Sessions cover stablecoin regulation and legislative design, cross-border settlement infrastructure, the treatment of digital assets under African law, and what the next generation of payment rails means for banks and their customers.",
   "The Summit is the successor to the Nigeria Stablecoin Summit, which established itself as Nigeria's leading forum on stablecoin policy over two editions. The 2027 edition takes the platform continental.",
-  "Proceedings open with an invitation-only executive mixer on the evening of Tuesday 8 June, followed by two full conference days on Wednesday 9 and Thursday 10 June.",
 ];
 
 const AboutSection: React.FC = () => {
@@ -27,19 +26,18 @@ const AboutSection: React.FC = () => {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="grid gap-16 lg:grid-cols-[1.15fr_1fr] lg:gap-20">
           <div>
-            <SectionHeading eyebrow="About the Summit" title="Three days in Lagos" />
+            <SectionHeading eyebrow="About the Summit" title="Two days in Lagos" />
 
             <div className="mt-8 space-y-6 text-[17px] leading-relaxed text-ink/75">
               <p>
                 The Africa Payments and Stablecoin Summit brings together 750
                 senior executives from banking, payments and finance across
-                Africa for three days in Lagos. Convened by the Africa Stablecoin
+                Africa for two days in Lagos. Convened by the Africa Stablecoin
                 Network, it is the continent's foremost gathering on stablecoin
                 regulation, cross-border settlement and the future of African
                 payment infrastructure. The Summit opens with an
-                invitation-only mixer on the evening of Tuesday 8 June,
-                followed by two full conference days on Wednesday 9 and
-                Thursday 10 June.
+                invitation-only mixer on the evening of Wednesday 9 June,
+                followed by the main conference on Thursday 10 June.
               </p>
             </div>
 
@@ -69,7 +67,7 @@ const AboutSection: React.FC = () => {
                       <p key={i}>{para}</p>
                     ))}
                     <p className="font-display font-semibold text-indigo-700">
-                      Lagos, Nigeria. 8 to 10 June 2027.
+                      Lagos, Nigeria. 9 and 10 June 2027.
                     </p>
                   </div>
                 </motion.div>

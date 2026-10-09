@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ArrowUpRight, Play } from "lucide-react";
 import SectionHeading from "../components/SectionHeading";
 import Marquee from "../components/Marquee";
-import { event, gallery } from "../data/event";
+import { gallery } from "../data/event";
 
 const row = (prefix: string) =>
   Array.from(
@@ -168,24 +168,6 @@ const GallerySection: React.FC = () => (
         </Marquee>
       </div>
 
-      <div className="mx-auto mt-14 max-w-7xl px-5 text-center md:px-8">
-        <a
-          href={gallery.driveUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="group inline-flex items-center gap-2 font-display text-[15px] font-semibold tracking-tight text-white transition-colors hover:text-green-400"
-        >
-          See every photo from the last edition
-          <ArrowUpRight
-            size={18}
-            className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-          />
-        </a>
-        <p className="mt-3 text-[13px] text-white/40">
-          Hosted on Google Drive. For press enquiries write to{" "}
-          {event.contact.email}.
-        </p>
-      </div>
     </div>
   </section>
 );

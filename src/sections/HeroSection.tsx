@@ -7,8 +7,8 @@ import { useRegistration } from "../components/RegistrationContext";
 
 const glance = [
   { value: "750", label: "Senior executives expected" },
-  { value: "3 days", label: "Mixer, then two conference days" },
-  { value: "Landmark Centre", label: "Victoria Island, Lagos" },
+  { value: "2 days", label: "Evening mixer, then a full conference day" },
+  { value: "Lagos", label: "Nigeria" },
 ];
 
 type CountdownRender = {
@@ -160,8 +160,8 @@ const HeroSection: React.FC = () => {
             </dl>
 
             <p className="mt-5 text-[13px] leading-relaxed text-ink/50">
-              The Tuesday evening mixer is by invitation. Both conference days
-              are open to pass holders.
+              The Wednesday evening mixer is by invitation. The conference day
+              is open to pass holders.
             </p>
           </aside>
         </div>
